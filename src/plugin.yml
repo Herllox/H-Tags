@@ -2,3 +2,11 @@ author: Herllox
 version: 1.0
 name: H-Tags
 main: fr.herllox.htags.Main
+api-version: 1.15
+depend: [PlaceholderAPI]
+commands:
+  tag:
+    permission: tag.set
+  tags:
+    description: menu des tags
+    permission: tags.see
