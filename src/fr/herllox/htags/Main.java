@@ -38,7 +38,6 @@ public class Main extends JavaPlugin {
         if(Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
             new TagsExpension(this).register();
         }
-
         try {reloadTag();}catch(SQLException e){}
 
         Bukkit.getPluginManager().registerEvents(new TagsListener(), this);
@@ -47,7 +46,6 @@ public class Main extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new TagsEvent(), this);
 
         getCommand("tags").setExecutor(new TagsMenu());
-
 
     }
 
