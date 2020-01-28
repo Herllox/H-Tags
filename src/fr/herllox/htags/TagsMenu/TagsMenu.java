@@ -20,6 +20,9 @@ public class TagsMenu implements CommandExecutor {
 
         UtilsTags.TagsMenu("&6&lHigh&b&lSky", "highsky", p, 100000, inv, 0);
         UtilsTags.TagsMenu("&d2K20", "years", p, 150000, inv, 1);
+        UtilsTags.TagsMenu("&bSkyBlock", "skyb", p, 75000, inv, 2);
+        UtilsTags.TagsMenu("&4L♥ve", "love", p, 100000, inv, 3);
+        UtilsTags.TagsMenu("&c&lSupreme", "supreme", p, 10000000, inv, 4);
 
 
         p.openInventory(inv);

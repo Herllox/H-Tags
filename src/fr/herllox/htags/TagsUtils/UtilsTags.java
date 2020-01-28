@@ -1,5 +1,6 @@
 package fr.herllox.htags.TagsUtils;
 
+import fr.herllox.htags.Main;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
@@ -15,7 +16,7 @@ public class UtilsTags {
 
         ItemStack i = new ItemStack(Material.NAME_TAG);
         ItemMeta i2 = i.getItemMeta();
-        i2.setDisplayName("§bTags = "+ name.replace("&", "§"));
+        i2.setDisplayName(name.replace("&", "§"));
         i2.setLore(Arrays.asList("","§aPrix: §e" + price));
         if(p.hasPermission("tags." + perm)){
             i2.setLore(Arrays.asList("","§aClique-droit pour séléctionner"));
@@ -29,9 +30,13 @@ public class UtilsTags {
 
 
 
-    public static void TagsBuy(){
+    public static void TagsBuy(Player p, Integer price, String name){
 
 
+
+        Main.econ.withdrawPlayer(p, price);
+        p.sendMessage("§6§lHigh§b§lSky §7§l>> §aTu viens d'acheté le tags "+name+" §apour §e"+price+"$§a.");
+        p.closeInventory();
 
     }
 

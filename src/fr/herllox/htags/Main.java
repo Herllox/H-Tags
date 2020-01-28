@@ -1,5 +1,7 @@
 package fr.herllox.htags;
 
+import fr.herllox.htags.TagsMenu.TagsEvent;
+import fr.herllox.htags.TagsMenu.TagsMenu;
 import fr.herllox.htags.TagsUtils.TagsExpension;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
@@ -27,6 +29,10 @@ public class Main extends JavaPlugin {
         if(Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
             new TagsExpension(this).register();
         }
+
+        Bukkit.getPluginManager().registerEvents(new TagsEvent(), this);
+
+        getCommand("tags").setExecutor(new TagsMenu());
 
     }
 
